@@ -76,6 +76,7 @@ local CLEANUP_PROBABILITY = 0.001 -- 1 / 1000
 
 
 local function exec(self, query)
+  error("Arun - Loggin query" .. query, 2)
   local pg = pgmoon.new(self.options)
 
   local connect_timeout = self.connect_timeout
