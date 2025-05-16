@@ -50,6 +50,8 @@ local ipairs = ipairs
 local error = error
 local fmt = string.format
 
+local log = ngx.log
+
 
 local DEFAULT_HOST  = "127.0.0.1"
 local DEFAULT_PORT  = 5432
@@ -76,7 +78,7 @@ local CLEANUP_PROBABILITY = 0.001 -- 1 / 1000
 
 
 local function exec(self, query)
-  error("Arun - Loggin query" .. query, 2)
+  log(ngx.INFO, "Arun - Loggin query" .. query)
   local pg = pgmoon.new(self.options)
 
   local connect_timeout = self.connect_timeout
