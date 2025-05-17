@@ -55,7 +55,7 @@ local log = ngx.log
 
 local DEFAULT_HOST  = "127.0.0.1"
 local DEFAULT_PORT  = 5432
-local DEFAULT_TABLE = "sessions"
+local DEFAULT_TABLE = "nginx_session.sessions"
 
 
 local SET = "INSERT INTO %s (sid, name, data, exp) VALUES ('%s', '%s', '%s', TO_TIMESTAMP(%d) AT TIME ZONE 'UTC') ON CONFLICT (sid) DO UPDATE SET data = EXCLUDED.data, exp = EXCLUDED.exp"
@@ -312,9 +312,9 @@ function storage.new(configuration)
   local port              = configuration and configuration.port or DEFAULT_PORT
 
   local application       = configuration and configuration.application
-  local username          = configuration and configuration.username
-  local password          = configuration and configuration.password
-  local database          = configuration and configuration.database
+  local username          = configuration and configuration.username or "postgres"
+  local password          = configuration and configuration.password or "arun"
+  local database          = configuration and configuration.database or "NGINX_SESSION"
 
   local table_name        = configuration and configuration.table or DEFAULT_TABLE
   local table_name_meta   = configuration and configuration.table_meta
