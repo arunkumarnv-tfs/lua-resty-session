@@ -79,6 +79,10 @@ local CLEANUP_PROBABILITY = 0.001 -- 1 / 1000
 
 local function exec(self, query)
   log(ngx.INFO, "Arun - Loggin query : " .. query)
+  log(ngx.INFO, "Arun - attributes host : " .. self.options.host)
+  log(ngx.INFO, "Arun - attributes username : " .. self.options.username)
+  log(ngx.INFO, "Arun - attributes password : " .. self.options.password)
+  log(ngx.INFO, "Arun - attributes database : " .. self.options.database)
   local pg = pgmoon.new(self.options)
 
   local connect_timeout = self.connect_timeout
