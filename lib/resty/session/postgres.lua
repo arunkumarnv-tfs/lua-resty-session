@@ -94,6 +94,7 @@ local function exec(self, query)
 
   local ok, err = pg:connect()
   if not ok then
+    log(ngx.INFO, "Arun - error query : " .. err)
     return nil, err
   end
 
