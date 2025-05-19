@@ -6,7 +6,7 @@ source = {
 }
 description = {
   summary = "Session Library for OpenResty - Flexible and Secure",
-  detailed = "lua-resty-session is a secure, and flexible session library for OpenResty. 3",
+  detailed = "lua-resty-session is a secure, and flexible session library for OpenResty. 4",
   homepage = "https://github.com/bungle/lua-resty-session",
   maintainer = "Aapo Talvensaari <aapo.talvensaari@gmail.com>, Samuele Illuminati <samuele@konghq.com>",
   license = "BSD",
